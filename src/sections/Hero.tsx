@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CyberCore from "../three/CyberCore";
 import MagneticButton from "../components/MagneticButton";
+import IDCard from "../components/IDCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,10 +113,14 @@ useLayoutEffect(() => {
   ref={heroRef}
   id="hero"
   className="hero"
+
 >
       <div className="hero-grid" />
+      <IDCard />
 
       <div className="hero-content">
+        <p className="hero-greeting">Hello, I’m Mufeed</p>
+
         <p className="hero-eyebrow">
           <span className="status-dot" />
           CYBER SECURITY RESEARCHER

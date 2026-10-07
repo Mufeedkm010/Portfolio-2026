@@ -241,7 +241,6 @@ gsap.fromTo(
 
             <div className="skill-list">
               <span>VAPT</span>
-              <span>VAPT</span>
 <span>Web Application Security</span>
 <span>Reconnaissance</span>
 <span>Burp Suite Testing</span>

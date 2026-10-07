@@ -85,7 +85,7 @@ function About() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%",
+          start: "top 80%",
           toggleActions:
             "play none none reverse",
         },
@@ -94,7 +94,7 @@ function About() {
       tl.from(".about-header", {
         opacity: 0,
         y: 20,
-        duration: 0.45,
+        duration: 0.3,
         ease: "power2.out",
       })
 
@@ -103,7 +103,7 @@ function About() {
           {
             opacity: 0,
             y: 30,
-            duration: 0.6,
+            duration: 0.4,
             ease: "power3.out",
           },
           "-=0.15"
@@ -114,7 +114,7 @@ function About() {
           {
             opacity: 0,
             y: 20,
-            duration: 0.55,
+            duration: 0.35,
             ease: "power3.out",
           },
           "-=0.25"
@@ -126,7 +126,7 @@ function About() {
             opacity: 0,
             y: 40,
             scale: 0.97,
-            duration: 0.7,
+            duration: 0.45,
             ease: "power3.out",
           },
           "-=0.3"
@@ -277,7 +277,7 @@ function About() {
               {/* NAME */}
 
               <p className="about-greeting">
-                Hello, I'm <span>Mufeed</span>
+                <span>Muhammed Mufeed K M</span>
               </p>
 
 

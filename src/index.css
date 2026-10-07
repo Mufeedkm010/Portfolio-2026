@@ -175,6 +175,17 @@ a {
   max-width: 720px;
 }
 
+.hero-greeting {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #00ff9c;
+  font-family: "Space Mono", monospace;
+  font-size: clamp(20px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 18px rgba(0, 255, 156, 0.3);
+}
+
 .hero-eyebrow {
   display: flex;
   align-items: center;
@@ -271,6 +282,93 @@ a {
   color: #00ff9c;
 }
 
+
+/* =========================================
+   HERO — MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .hero {
+    min-height: 100svh;
+    height: 100svh;
+    padding: 100px 24px 60px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    z-index: 5;
+    padding-top: 70px;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    margin-bottom: 22px;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 15vw, 82px);
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-description {
+    max-width: 330px;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .hero-buttons .magnetic-button {
+    min-height: 44px;
+    padding: 0 16px;
+  }
+
+  /* 3D sphere */
+  .cyber-core-position {
+    width: 300px;
+    height: 300px;
+
+    right: 50%;
+    top: auto;
+    bottom: -45px;
+
+    transform: translateX(50%);
+
+    opacity: 0.35;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .cyber-core {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-index {
+    bottom: 22px;
+    right: 24px;
+    font-size: 9px;
+  }
+
+  .hero-grid {
+    background-size: 45px 45px;
+  }
+}
 /* =========================
    3D CORE
 ========================= */
@@ -304,20 +402,20 @@ a {
 
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
 
   color: rgba(255, 255, 255, 0.86);
 
   font-family: "Space Mono", monospace;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 
   letter-spacing: 0.15em;
 }
 
 .scroll-line {
-  width: 64px;
-  height: 2px;
+  width: 80px;
+  height: 3px;
 
   background: #00ff9c;
   box-shadow: 0 0 10px rgba(0, 255, 156, 0.7);
@@ -572,6 +670,15 @@ a {
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+.about-greeting span {
+  color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 8%, #f2f2f2 48%, #c9c9c9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(80, 80, 80, 0.65), 0 3px 8px rgba(255, 255, 255, 0.12);
 }
 
 .about-designation {
@@ -3571,36 +3678,48 @@ body {
     0 0 20px rgba(0, 255, 156, 0.08);
 }
 
-@media (max-width: 900px) {
+/* =========================================
+   NAVBAR — MOBILE
+========================================= */
 
-  .nav-links {
-    gap: 18px;
-  }
-
-  .nav-links a {
-    font-size: 8px;
-  }
-
-}
-
-@media (max-width: 700px) {
-
+@media (max-width: 800px) {
   .navbar {
-    padding: 0 6vw;
+    height: 68px;
+    padding: 0 20px;
   }
 
+  .nav-logo {
+    gap: 8px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-icon span {
+    font-size: 10px;
+  }
+
+  /* Hide desktop navigation */
   .nav-links {
     display: none;
   }
 
   .nav-socials {
-    gap: 12px;
+    gap: 10px;
   }
 
-  .nav-socials .contact-button {
-    padding: 8px 12px;
+  .nav-socials > a:not(.contact-button) {
+    display: none;
   }
 
+  .contact-button {
+    padding: 9px 14px;
+    font-size: 9px;
+  }
 }
 
 /* =========================================
@@ -5449,4 +5568,1219 @@ section {
     border-bottom: none;
   }
 
+}
+
+/* Keep the hero readable and scrollable on phones. */
+@media (max-width: 800px) {
+  .hero {
+    height: auto !important;
+    min-height: 100svh;
+    padding: 112px 7vw 240px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0;
+    z-index: 5;
+  }
+
+  .hero-eyebrow {
+    max-width: 100%;
+    font-size: clamp(8px, 2.6vw, 10px);
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 12vw, 76px);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-title span {
+    white-space: nowrap;
+  }
+
+  .hero-description {
+    max-width: 36ch;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .hero-buttons .magnetic-button {
+    min-height: 44px;
+    padding: 0 14px;
+  }
+
+  .cyber-core-position {
+    width: min(76vw, 300px);
+    height: min(76vw, 300px);
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    transform: translateX(-50%);
+    opacity: 0.28;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-index {
+    right: 7vw;
+    bottom: 18px;
+    z-index: 2;
+  }
+}
+
+
+/* =========================================
+   HERO FLOATING SECURITY ID CARD
+========================================= */
+
+.id-card-wrapper {
+  position: absolute;
+
+  /*
+    LEFT SIDE OF HERO
+    Below the navbar
+  */
+  left: calc(7vw + 20px);
+  top: 150px;
+
+  width: 250px;
+
+  z-index: 6;
+
+  pointer-events: none;
+
+  perspective: 1000px;
+  opacity: 1;
+  isolation: isolate;
+}
+
+
+/* =========================================
+   NAVBAR → ID CARD CONNECTOR
+========================================= */
+
+.id-card-cable {
+  position: absolute;
+
+  top: -100px;
+  left: 50%;
+
+  width: 1px;
+  height: 232px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 255, 156, 0.15),
+    rgba(0, 255, 156, 0.75)
+  );
+
+  box-shadow:
+    0 0 8px rgba(0, 255, 156, 0.35);
+
+  z-index: 0;
+
+  transform-origin: top center;
+  animation: cableSwing 5.6s ease-in-out infinite;
+}
+
+@keyframes cableSwing {
+  0% {
+    transform: translateX(-50%) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(1deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(-1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .id-card-cable {
+    animation: none;
+  }
+}
+
+
+/* =========================================
+   NAVBAR CONNECTION POINT
+========================================= */
+
+.id-card-cable::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #00ff9c;
+
+  border-radius: 50%;
+
+  background: #050505;
+
+  box-shadow:
+    0 0 8px rgba(0, 255, 156, 0.8),
+    0 0 18px rgba(0, 255, 156, 0.3);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.id-card {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 130px;
+
+  width: 250px;
+  min-height: 145px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 255, 156, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  border: 1px solid rgba(0, 255, 156, 0.4);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 255, 156, 0.06);
+
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+
+  transform-origin: top center;
+
+  will-change: transform;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   CARD CORNER MARKERS
+========================================= */
+
+.id-card::before,
+.id-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  border-color: #00ff9c;
+
+  border-style: solid;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+
+/* TOP LEFT */
+
+.id-card::before {
+  top: 5px;
+  left: 5px;
+
+  border-width:
+    1px
+    0
+    0
+    1px;
+}
+
+
+/* BOTTOM RIGHT */
+
+.id-card::after {
+  right: 5px;
+  bottom: 5px;
+
+  border-width:
+    0
+    1px
+    1px
+    0;
+}
+
+
+/* =========================================
+   SCAN EFFECT
+========================================= */
+
+.id-card-scan {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #00ff9c;
+
+  box-shadow:
+    0 0 10px #00ff9c;
+
+  opacity: 0.3;
+
+  animation:
+    idCardScan 3s linear infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes cardSwing {
+  0%, 100% {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  25% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(-3deg);
+  }
+
+  75% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+.id-card {
+  animation: cardSwing 3.8s ease-in-out infinite;
+}
+
+/* =========================================
+   TOP INFORMATION
+========================================= */
+
+.id-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* SECURITY CODE */
+
+.id-card-code {
+  color:
+    rgba(255, 255, 255, 0.45);
+}
+
+
+/* ACTIVE STATUS */
+
+.id-card-status {
+  color: #00ff9c;
+
+  text-shadow:
+    0 0 8px rgba(0, 255, 156, 0.5);
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.id-card-body {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.id-card-photo {
+  position: relative;
+
+  width: 58px;
+  height: 72px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(0, 255, 156, 0.35);
+
+  background: #080808;
+
+  overflow: hidden;
+}
+
+.id-card-photo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* PHOTO PLACEHOLDER */
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #00ff9c;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 255, 156, 0.1),
+      transparent 65%
+    );
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.id-card-photo::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(0, 255, 156, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 255, 156, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 12px 12px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CARD INFORMATION
+========================================= */
+
+.id-card-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+/* LABEL */
+
+.id-card-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 6px;
+
+  letter-spacing: 0.12em;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+
+/* NAME */
+
+.id-card-info h3 {
+  margin: 0;
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+}
+
+
+/* POSITION */
+
+.id-card-info p {
+  margin:
+    5px
+    0
+    8px;
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.14em;
+
+  color: #00ff9c;
+}
+
+
+/* DIVIDER */
+
+.id-card-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin-bottom: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+/* ID */
+
+.id-card-id {
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 6px;
+
+  letter-spacing: 0.12em;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.id-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 12px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 6px;
+
+  letter-spacing: 0.12em;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.id-card-wrapper:hover .id-card {
+  border-color: #00ff9c;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(0, 255, 156, 0.12);
+}
+
+
+/* =========================================
+   HERO ONLY — DESKTOP POSITION
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .id-card-wrapper {
+    left: calc(6vw + 480px);
+    top: 150px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .id-card-wrapper {
+    left: calc(4vw + 20px);
+    top: 150px;
+
+    width: 220px;
+  }
+
+  .id-card {
+    width: 220px;
+
+    min-height: 130px;
+
+    padding: 13px;
+  }
+
+  .id-card-photo {
+    width: 50px;
+    height: 63px;
+  }
+
+  .id-card-info h3 {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .id-card-wrapper {
+    position: absolute;
+
+    left: 38px;
+    right: auto;
+
+    top: 150px;
+
+    bottom: auto;
+
+    width: 190px;
+
+    opacity: 0.85;
+  }
+
+  .id-card {
+    width: 190px;
+
+    min-height: 115px;
+
+    padding: 11px;
+  }
+
+  .id-card-photo {
+    width: 42px;
+    height: 54px;
+  }
+
+  .id-card-body {
+    gap: 10px;
+  }
+
+  .id-card-info h3 {
+    font-size: 16px;
+  }
+
+  .id-card-label {
+    font-size: 5px;
+  }
+
+  .id-card-info p {
+    font-size: 6px;
+  }
+
+  .id-card-id {
+    font-size: 5px;
+  }
+
+  .id-card-bottom {
+    font-size: 5px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .id-card-wrapper {
+    left: 32px;
+
+    top: 150px;
+
+    width: 165px;
+
+    opacity: 0.7;
+  }
+
+  .id-card {
+    width: 165px;
+
+    min-height: 105px;
+
+    padding: 10px;
+  }
+
+  .id-card-photo {
+    width: 38px;
+    height: 48px;
+  }
+
+  .id-card-info h3 {
+    font-size: 14px;
+  }
+
+  .id-card-body {
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+  .id-card-wrapper {
+    left: 30px;
+
+    top: 150px;
+
+    width: 145px;
+  }
+
+  .id-card {
+    width: 145px;
+
+    padding: 8px;
+  }
+
+  .id-card-photo {
+    width: 34px;
+    height: 43px;
+  }
+
+  .id-card-info h3 {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .id-card-scan {
+    animation: none;
+  }
+
+}
+
+/* Keep the physical badge finish after the responsive card rules. */
+.id-card {
+  border: 1px solid rgba(205, 224, 213, 0.38);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #1b211e, #0a0d0b 76%);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: none;
+}
+
+.id-card::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  height: 4px;
+  border: 0;
+  opacity: 1;
+  background: linear-gradient(90deg, #00ff9c, rgba(0, 255, 156, 0.18));
+}
+
+.id-card::after {
+  inset: 1px;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 9px;
+  opacity: 1;
+  background: linear-gradient(125deg, transparent 40%, rgba(255, 255, 255, 0.035) 52%, transparent 65%);
+}
+
+.id-card > :not(.id-card-scan) {
+  position: relative;
+  z-index: 1;
+}
+
+.id-card-scan {
+  opacity: 0.1;
+  box-shadow: 0 0 5px rgba(0, 255, 156, 0.45);
+}
+
+.id-card-top {
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.id-card-status {
+  padding: 2px 5px;
+  border: 1px solid rgba(0, 255, 156, 0.35);
+  border-radius: 2px;
+  font-size: 6px;
+  text-shadow: none;
+}
+
+.id-card-photo {
+  border: 1px solid rgba(213, 228, 218, 0.58);
+  border-radius: 3px;
+}
+
+.id-card-photo::after {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 42%, rgba(0, 0, 0, 0.12));
+}
+
+.id-card-info h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.id-card-info p {
+  color: #c4d0c9;
+  letter-spacing: 0.1em;
+}
+
+.id-card-bottom {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Keep the badge on the left and give the hero copy its own column. */
+.id-card-wrapper {
+  left: 2vw;
+  top: 180px;
+}
+
+.hero-content {
+  width: calc(100% - 280px);
+  max-width: 720px;
+  margin-left: 180px;
+}
+
+@media (max-width: 1100px) and (min-width: 801px) {
+  .id-card-wrapper {
+    left: 2vw;
+    top: 180px;
+  }
+
+  .hero-content {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 6.5vw, 72px);
+  }
+}
+
+@media (max-width: 800px) {
+  .id-card-wrapper {
+    left: 12px;
+    top: 180px;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .id-card-wrapper {
+    left: 10px;
+    top: 180px;
+  }
+}
+
+.hero-title {
+  font-size: clamp(50px, 6.5vw, 104px);
+}
+
+@media (max-width: 1100px) and (min-width: 801px) {
+  .hero-title {
+    font-size: clamp(42px, 5.5vw, 62px);
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-title {
+    font-size: clamp(32px, 10vw, 64px);
+  }
+}
+
+
+/* =========================================================
+   ID CARD CLEANUP — paste at the VERY END of index.css
+   (it overrides all earlier .id-card / .hero-content rules)
+========================================================= */
+
+/* Lanyard: hangs from the navbar, left gutter of the hero */
+.id-card-wrapper {
+  position: absolute;
+  top: 80px;                 /* directly under the navbar */
+  left: 3vw;
+  width: 250px;
+  z-index: 6;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+/* Cable now ends exactly where the card starts */
+.id-card-cable {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 1px;
+  height: 70px;
+  margin: 0 auto;
+  transform: none !important;
+  animation: none !important;
+  background: linear-gradient(to bottom, rgba(0,255,156,0.15), rgba(0,255,156,0.8));
+  box-shadow: 0 0 8px rgba(0,255,156,0.35);
+}
+
+.id-card-cable::before {
+  top: 0;
+}
+
+/* Small metal clip joining cable and card */
+.id-card-clip {
+  width: 26px;
+  height: 10px;
+  margin: -1px auto 0;
+  border: 1px solid rgba(0,255,156,0.55);
+  border-radius: 3px;
+  background: #0a0d0b;
+  position: relative;
+  z-index: 3;
+}
+
+/* Card: no more CSS swing fighting GSAP, no extra top margin */
+.id-card {
+  margin-top: -1px;
+  width: 250px;
+  min-height: 150px;
+  padding: 16px;
+  animation: none !important;
+  transform: none;
+}
+
+.id-card-scan {
+  animation: idCardScan 4s linear infinite;
+}
+
+@keyframes idCardScan {
+  from { top: 0; }
+  to   { top: 100%; }
+}
+
+/* Slightly larger, readable text on the card */
+.id-card-top      { font-size: 8px; }
+.id-card-label    { font-size: 7px; }
+.id-card-info p   { font-size: 8px; }
+.id-card-id       { font-size: 7px; }
+.id-card-bottom   { font-size: 7px; }
+.id-card-photo    { width: 62px; height: 78px; }
+
+/* Give the hero text its own column, clear of the badge */
+.hero-content {
+  width: auto;
+  max-width: 720px;
+  margin-left: 200px;
+  padding-top: 0;
+}
+
+/* Tablet */
+@media (max-width: 1100px) and (min-width: 801px) {
+  .id-card-wrapper { left: 2vw; width: 210px; }
+  .id-card { width: 210px; padding: 13px; }
+  .id-card-photo { width: 50px; height: 63px; }
+  .hero-content { margin-left: 210px; width: auto; }
+}
+
+/* Mobile: hide the hanging badge so it never overlaps the headline
+   (your photo + details are already shown in the About section) */
+@media (max-width: 800px) {
+  .id-card-wrapper { display: none; }
+  .hero-content { margin-left: 0; width: 100%; padding-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .id-card-scan { animation: none; }
+}
+
+
+/* Append to the end of index.css — centres the cursor dot and ring on the pointer */
+.custom-cursor {
+  margin-left: -3px;
+  margin-top: -3px;
+}
+
+.cursor-follower {
+  margin-left: -17px;   /* half of 34px */
+  margin-top: -17px;
+}
+
+.cursor-follower-active {
+  margin-left: -27.5px; /* half of 55px */
+  margin-top: -27.5px;
+}
+
+/* =========================================
+   MOBILE MENU — append to the END of index.css
+========================================= */
+
+/* Hamburger: hidden on desktop */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(0, 255, 156, 0.35);
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: #00ff9c;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-toggle span:nth-child(1) { top: 15px; }
+.nav-toggle span:nth-child(2) { top: 24px; }
+
+.nav-toggle-open span:nth-child(1) { top: 20px; transform: rotate(45deg); }
+.nav-toggle-open span:nth-child(2) { top: 20px; transform: rotate(-45deg); }
+
+.nav-toggle:focus-visible {
+  outline: 2px solid #00ff9c;
+  outline-offset: 3px;
+}
+
+/* Overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;               /* just under the navbar (1000) */
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 110px 7vw 40px;
+
+  background: rgba(5, 5, 5, 0.97);
+  backdrop-filter: blur(14px);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-links a {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+
+  font-size: clamp(30px, 9vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.25s ease;
+}
+
+.mobile-menu-open .mobile-menu-links a {
+  opacity: 1;
+  transform: none;
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links a:focus-visible {
+  color: #00ff9c;
+}
+
+.mobile-menu-index {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #00ff9c;
+}
+
+.mobile-menu-footer {
+  position: relative;
+  display: flex;
+  gap: 24px;
+
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mobile-menu-footer a:hover {
+  color: #00ff9c;
+}
+
+@media (max-width: 800px) {
+  .nav-toggle { display: block; }
+  .mobile-menu { display: flex; }
+
+  /* Shorter logo text so it fits next to Contact + hamburger */
+  .nav-logo span:last-child {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-socials { gap: 8px; }
+}
+
+@media (max-width: 380px) {
+  .nav-logo span:last-child { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu-links a,
+  .nav-toggle span {
+    transition: none;
+  }
 }

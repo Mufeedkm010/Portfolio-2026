@@ -51,16 +51,7 @@ function Contact() {
         },
       });
 
-      gsap.from(".contact-footer", {
-        opacity: 0,
-        y: 25,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: ".contact-footer",
-          start: "top 90%",
-        },
-      });
-    }, sectionRef);
+    });
 
     return () => ctx.revert();
   }, []);
@@ -146,7 +137,7 @@ function Contact() {
                 className="contact-terminal-link"
               >
                 <span>EMAIL</span>
-                <span>â†—</span>
+                <span>↗</span>
               </a>
 
               <a
@@ -156,7 +147,7 @@ function Contact() {
                 className="contact-terminal-link"
               >
                 <span>GITHUB</span>
-                <span>â†—</span>
+                <span>↗</span>
               </a>
 
               <a
@@ -166,7 +157,7 @@ function Contact() {
                 className="contact-terminal-link"
               >
                 <span>LINKEDIN</span>
-                <span>â†—</span>
+                <span>↗</span>
               </a>
 
             </div>

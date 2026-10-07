@@ -19,6 +19,7 @@ function App() {
       <Loader />
 
       <Cursor />
+
       <Navbar />
 
       <main>
